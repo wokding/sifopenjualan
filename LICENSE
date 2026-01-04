@@ -1,0 +1,78 @@
+MIT License
+
+Copyright (c) 2026 SiPenjualan Contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+## Third-Party Licenses
+
+This project uses the following open-source libraries:
+
+### CodeIgniter
+- License: MIT License
+- Copyright (c) 2014-2019 British Columbia Institute of Technology
+- https://codeigniter.com
+
+### Bootstrap
+- License: MIT License  
+- Copyright (c) 2011-2023 The Bootstrap Authors
+- https://getbootstrap.com
+
+### SB Admin 2
+- License: MIT License
+- Copyright (c) 2013-2021 Start Bootstrap LLC
+- https://startbootstrap.com/theme/sb-admin-2
+
+### SweetAlert2
+- License: MIT License
+- Copyright (c) 2014-present Tristan Edwards & Limon Monte
+- https://sweetalert2.github.io
+
+### jQuery
+- License: MIT License
+- Copyright OpenJS Foundation and jQuery contributors
+- https://jquery.com
+
+### DataTables
+- License: MIT License
+- Copyright (c) 2008-2023 SpryMedia Ltd
+- https://datatables.net
+
+### Font Awesome
+- Font License: SIL OFL 1.1
+- Code License: MIT License  
+- https://fontawesome.com
+
+### Chart.js
+- License: MIT License
+- Copyright (c) 2014-2022 Chart.js Contributors
+- https://www.chartjs.org
+
+### MPDF
+- License: GPL v2.0+
+- https://mpdf.github.io
+
+### Dompdf
+- License: LGPL v2.1
+- https://github.com/dompdf/dompdf
+
+All third-party libraries retain their original licenses and copyrights.
+For more details, please refer to each library's official documentation.
