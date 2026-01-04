@@ -1,0 +1,63 @@
+body {
+  font-family: Arial;
+  padding: 50px;
+}
+
+
+/* The form control - this can be whatever you want it to be
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.daterange {
+  border-radius: 4px;
+  border: solid 1px #ccc;
+  line-height: 37px;
+  padding: 0 5px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.daterange i,
+.daterange span {
+  margin: 0 5px;
+}
+
+.daterange i {
+  float: right;
+  margin-top: 10px;
+}
+
+
+
+/* Styles required for the picker box
+   You may have to adjust to font-size to make things fit!
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.daterangepicker {
+  font-size: 0.8em;
+  border: solid 1px #ccc;
+  -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+  box-shadow: 0 6px 12px rgba(0,0,0,.175);
+  border-radius: 4px;
+  display: none;
+}
+
+.daterangepicker option.disabled,
+.daterangepicker td.disabled {
+  color: #ddd;
+  text-decoration: none;
+}
+
+.daterangepicker .calendar-table th,
+.daterangepicker .calendar-table td {
+  min-width: auto;
+  padding: 5px 8px;
+}
+
+.daterangepicker input[type='text'] {
+  box-sizing: border-box;
+}
+
+.daterangepicker table {
+  box-sizing: border-box;
+  border-collapse: collapse;
+}
