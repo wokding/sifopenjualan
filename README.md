@@ -187,7 +187,7 @@ Project ini dilisensikan under MIT License - lihat [LICENSE](LICENSE) file untuk
 
 ## 👥 Authors
 
-- **Your Name** - *Initial work* - [wokding](https://github.com/wokding)
+- **Ade Naufal Rianto** - *Initial work* - [wokding](https://github.com/wokding)
 
 ## 🙏 Acknowledgments
 
