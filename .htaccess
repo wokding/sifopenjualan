@@ -1,19 +1,8 @@
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ index.php/$1 [L]
+RewriteRule ^(.*)$ index.php?$1 [L]
 
-# Security: Prevent directory browsing
-Options -Indexes
-
-# Security: Block access to system and application folders
-RewriteCond %{REQUEST_URI} ^/?(system|application)
-RewriteRule ^(.*)$ index.php/$1 [L]
-
-# Production settings
-php_flag display_errors Off
-php_flag log_errors On
-php_value upload_max_filesize 10M
-php_value post_max_size 10M
-php_value memory_limit 128M
-php_value max_execution_time 300
+php_flag display_errors On
+php_value upload_max_filesize 1000M
+php_value post_max_size 1000M
