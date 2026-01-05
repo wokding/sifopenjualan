@@ -1,4 +1,12 @@
 RewriteEngine On
+
+# Remove InfinityFree tracking parameter
+RewriteCond %{QUERY_STRING} ^i=\d+$
+RewriteRule ^$ /? [R=301,L]
+
+# Redirect root to auth
+RewriteRule ^$ auth [L]
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php?$1 [L]
