@@ -98,16 +98,21 @@ class Admin extends CI_Controller
             $this->load->view('templates/topbar', $data);
 
             $dariDB = $this->admin->cekkodepelanggan();
-            // contoh P004, angka 1 adalah awal pengambilan angka, dan 3 jumlah angka yang diambil
+            // contoh P001, angka 1 adalah awal pengambilan angka, dan 3 jumlah angka yang diambil
             $nourut = substr($dariDB, 1, 3);
             $kodePelangganSekarang = (int)$nourut + 1;
-            $data['kd_pelanggan'] = $kodePelangganSekarang;
+            $data['kd_pelanggan'] = 'P' . str_pad($kodePelangganSekarang, 3, '0', STR_PAD_LEFT);
 
             $this->load->view('admin/masterpelanggan', $data);
             $this->load->view('templates/footer');
         } else {
+            $kodePelanggan = $this->input->post('kd_pelanggan');
+            // Pastikan format P001 saat insert
+            if (is_numeric($kodePelanggan)) {
+                $kodePelanggan = 'P' . str_pad($kodePelanggan, 3, '0', STR_PAD_LEFT);
+            }
             $data = [
-                'kd_pelanggan' => $this->input->post('kd_pelanggan'),
+                'kd_pelanggan' => $kodePelanggan,
                 'nama_pelanggan' => $this->input->post('nama_pelanggan'),
                 'jk' => $this->input->post('jk'),
                 'tgl_lahir' => $this->input->post('tgl_lahir'),
@@ -171,7 +176,7 @@ class Admin extends CI_Controller
 
                 for ($i = 2; $i <= $arrayCount; $i++) {
 
-                    $kodePelangganSekarang = 'P00' . $nourut++;
+                    $kodePelangganSekarang = 'P' . str_pad($nourut++, 3, '0', STR_PAD_LEFT);
 
                     $kd_pelanggan = $SheetDataKey['kd_pelanggan'];
                     $nama_pelanggan = $SheetDataKey['nama_pelanggan'];
@@ -242,13 +247,18 @@ class Admin extends CI_Controller
             // contoh B0001, angka 1 adalah awal pengambilan angka, dan 4 jumlah angka yang diambil
             $nourut = substr($dariDB, 1, 4);
             $kodeBarangSekarang = (int)$nourut + 1;
-            $data['kd_barang'] = $kodeBarangSekarang;
+            $data['kd_barang'] = 'B' . str_pad($kodeBarangSekarang, 4, '0', STR_PAD_LEFT);
 
             $this->load->view('admin/masterbarang', $data);
             $this->load->view('templates/footer');
         } else {
+            $kodeBarang = $this->input->post('kd_barang');
+            // Pastikan format B0001 saat insert
+            if (is_numeric($kodeBarang)) {
+                $kodeBarang = 'B' . str_pad($kodeBarang, 4, '0', STR_PAD_LEFT);
+            }
             $data = [
-                'kd_barang' => $this->input->post('kd_barang'),
+                'kd_barang' => $kodeBarang,
                 'nama_barang' => $this->input->post('nama_barang'),
                 'satuan' => $this->input->post('satuan'),
                 'harga' => $this->input->post('harga')
@@ -308,7 +318,7 @@ class Admin extends CI_Controller
 
                 for ($i = 2; $i <= $arrayCount; $i++) {
 
-                    $kodeBarangSekarang = 'B000' . $nourut++;
+                    $kodeBarangSekarang = 'B' . str_pad($nourut++, 4, '0', STR_PAD_LEFT);
 
                     $kd_barang = $SheetDataKey['kd_barang'];
                     $nama_barang = $SheetDataKey['nama_barang'];
@@ -370,13 +380,18 @@ class Admin extends CI_Controller
             // contoh T001, angka 1 adalah awal pengambilan angka, dan 3 jumlah angka yang diambil
             $nourut = substr($dariDB, 1, 3);
             $kodePenjualanSekarang = (int)$nourut + 1;
-            $data['kd_penjualan'] = $kodePenjualanSekarang;
+            $data['kd_penjualan'] = 'T' . str_pad($kodePenjualanSekarang, 3, '0', STR_PAD_LEFT);
 
             $this->load->view('admin/transaksipenjualan', $data);
             $this->load->view('templates/footer');
         } else {
+            $kodePenjualan = $this->input->post('kd_penjualan');
+            // Pastikan format T001 saat insert
+            if (is_numeric($kodePenjualan)) {
+                $kodePenjualan = 'T' . str_pad($kodePenjualan, 3, '0', STR_PAD_LEFT);
+            }
             $data = [
-                'kd_penjualan' => $this->input->post('kd_penjualan'),
+                'kd_penjualan' => $kodePenjualan,
                 'tgl_penjualan' => $this->input->post('tgl_penjualan'),
                 'kd_pelanggan' => $this->input->post('kd_pelanggan'),
                 'kd_barang' => $this->input->post('kd_barang'),

@@ -46,12 +46,7 @@ CREATE TABLE `barang` (
 -- Dumping data untuk tabel `barang`
 --
 
-INSERT INTO `barang` (`kd_barang`, `nama_barang`, `satuan`, `harga`) VALUES
-('B0001', 'Kulkas 2 Pintu', 'Unit', 2500000),
-('B0002', 'Kabel Listrik 0.5 cm', 'Roll', 9000),
-('B0003', 'Kipas Angin Miyako', 'Unit', 350000),
-('B0004', 'Antena TV Analog', 'Pcs', 45000),
-('B0005', 'Terminal 4 Lubang', 'Pcs', 25000);
+-- Data barang kosong, akan otomatis generate dari B0001, B0002, dst saat ditambahkan
 
 -- --------------------------------------------------------
 
@@ -73,11 +68,7 @@ CREATE TABLE `pelanggan` (
 -- Dumping data untuk tabel `pelanggan`
 --
 
-INSERT INTO `pelanggan` (`kd_pelanggan`, `nama_pelanggan`, `jk`, `tgl_lahir`, `agama`, `hp`, `alamat`) VALUES
-('P001', 'Dani', 'L', '1990-11-12', 'Islam', '08980012668', 'JL. Swadaya No. 11 Bekasi'),
-('P002', 'Mia', 'P', '1997-04-25', 'Islam', '0818972585', 'JL. Dahlia No. 5 Bekasi'),
-('P003', 'Naufal', 'L', '1997-09-14', 'Islam', '081385436440', 'JL. Belimbing No. 3 Bekasi'),
-('P004', 'Renalda', 'P', '1997-08-07', 'Islam', '08991592888', 'JL. Belimbing No. 9 Bekasi');
+-- Data pelanggan kosong, akan otomatis generate dari P001, P002, dst saat ditambahkan
 
 -- --------------------------------------------------------
 
@@ -97,12 +88,7 @@ CREATE TABLE `penjualan` (
 -- Dumping data untuk tabel `penjualan`
 --
 
-INSERT INTO `penjualan` (`kd_penjualan`, `tgl_penjualan`, `kd_pelanggan`, `kd_barang`, `qty`) VALUES
-('T001', '2021-09-03', 'P001', 'B0001', 2),
-('T002', '2021-09-03', 'P002', 'B0002', 10),
-('T003', '2021-12-04', 'P001', 'B0003', 3),
-('T004', '2021-09-03', 'P003', 'B0004', 6),
-('T005', '2021-09-03', 'P004', 'B0005', 18);
+-- Data penjualan kosong, akan otomatis generate dari T001, T002, dst saat ditambahkan
 
 -- --------------------------------------------------------
 

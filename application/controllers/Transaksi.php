@@ -39,7 +39,7 @@ class Transaksi extends CI_Controller
             // contoh T001, angka 1 adalah awal pengambilan angka, dan 3 jumlah angka yang diambil
             $nourut = substr($dariDB, 1, 3);
             $kodePenjualanSekarang = (int)$nourut + 1;
-            $data['kd_penjualan'] = $kodePenjualanSekarang;
+            $data['kd_penjualan'] = 'T' . str_pad($kodePenjualanSekarang, 3, '0', STR_PAD_LEFT);
             $data['transaksiPenjualan'] = $this->admin->getPenjualan();
             $data['masterPelanggan'] = $this->db->get('pelanggan')->result_array();
             $data['masterBarang'] = $this->db->get('barang')->result_array();
@@ -47,8 +47,13 @@ class Transaksi extends CI_Controller
             $this->load->view('transaksi/penjualan', $data);
             $this->load->view('templates/footer');
         } else {
+            $kodePenjualan = $this->input->post('kd_penjualan');
+            // Pastikan format T001 saat insert
+            if (is_numeric($kodePenjualan)) {
+                $kodePenjualan = 'T' . str_pad($kodePenjualan, 3, '0', STR_PAD_LEFT);
+            }
             $data = [
-                'kd_penjualan' => $this->input->post('kd_penjualan'),
+                'kd_penjualan' => $kodePenjualan,
                 'tgl_penjualan' => $this->input->post('tgl_penjualan'),
                 'kd_pelanggan' => $this->input->post('kd_pelanggan'),
                 'kd_barang' => $this->input->post('kd_barang'),
