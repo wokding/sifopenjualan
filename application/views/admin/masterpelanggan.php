@@ -82,7 +82,7 @@
                                     <div class="form-group">
                                         <label class="col-form-label col-lg label-align">Kode Pelanggan : </label>
                                         <div class="col-lg">
-                                            <input type="text" readonly class="form-control" id="kd_pelanggan" name="kd_pelanggan" value="P<?php echo sprintf("%03s", $kd_pelanggan) ?>" placeholder="Kode Pelanggan" required>
+                                            <input type="text" readonly class="form-control" id="kd_pelanggan" name="kd_pelanggan" value="<?php echo $kd_pelanggan ?>" placeholder="Kode Pelanggan" required>
                                         </div>
                                     </div>
                                     <div class="form-group">

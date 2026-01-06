@@ -92,8 +92,8 @@ Pastikan sistem Anda telah terinstall:
 5. **Login**
    
    Default credentials:
-   - **Email**: admin@admin.com
-   - **Password**: password123
+   - **Email**: userdemo@gmail.com
+   - **Password**: user123
 
 ## 📁 Project Structure
 

@@ -80,7 +80,7 @@
                                     <div class="form-group">
                                         <label class="col-form-label col-lg label-align">Kode Penjualan : </label>
                                         <div class="col-lg">
-                                            <input type="text" readonly class="form-control" id="kd_penjualan" name="kd_penjualan" value="T<?php echo sprintf("%03s", $kd_penjualan) ?>" placeholder="Kode Penjualan" required>
+                                            <input type="text" readonly class="form-control" id="kd_penjualan" name="kd_penjualan" value="<?php echo $kd_penjualan ?>" placeholder="Kode Penjualan" required>
                                         </div>
                                     </div>
                                     <div class="form-group">

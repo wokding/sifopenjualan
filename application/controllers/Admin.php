@@ -98,18 +98,18 @@ class Admin extends CI_Controller
             $this->load->view('templates/topbar', $data);
 
             $dariDB = $this->admin->cekkodepelanggan();
-            // contoh P001, angka 1 adalah awal pengambilan angka, dan 3 jumlah angka yang diambil
-            $nourut = substr($dariDB, 1, 3);
-            $kodePelangganSekarang = (int)$nourut + 1;
-            $data['kd_pelanggan'] = 'P' . str_pad($kodePelangganSekarang, 3, '0', STR_PAD_LEFT);
+            // contoh P-0001, angka 2 adalah awal pengambilan angka setelah P-, dan 4 jumlah angka yang diambil
+            $nourut = (int)str_replace('P-', '', $dariDB);
+            $kodePelangganSekarang = $nourut + 1;
+            $data['kd_pelanggan'] = 'P-' . str_pad($kodePelangganSekarang, 4, '0', STR_PAD_LEFT);
 
             $this->load->view('admin/masterpelanggan', $data);
             $this->load->view('templates/footer');
         } else {
             $kodePelanggan = $this->input->post('kd_pelanggan');
-            // Pastikan format P001 saat insert
+            // Pastikan format P-0001 saat insert
             if (is_numeric($kodePelanggan)) {
-                $kodePelanggan = 'P' . str_pad($kodePelanggan, 3, '0', STR_PAD_LEFT);
+                $kodePelanggan = 'P-' . str_pad($kodePelanggan, 4, '0', STR_PAD_LEFT);
             }
             $data = [
                 'kd_pelanggan' => $kodePelanggan,
@@ -171,12 +171,12 @@ class Admin extends CI_Controller
             if ($flag == 1) {
 
                 $dariDB = $this->admin->cekkodepelanggan();
-                $no_awal = substr($dariDB, 1, 3);
-                $nourut = (int)$no_awal + 1;
+                $no_awal = (int)str_replace('P-', '', $dariDB);
+                $nourut = $no_awal + 1;
 
                 for ($i = 2; $i <= $arrayCount; $i++) {
 
-                    $kodePelangganSekarang = 'P' . str_pad($nourut++, 3, '0', STR_PAD_LEFT);
+                    $kodePelangganSekarang = 'P-' . str_pad($nourut++, 4, '0', STR_PAD_LEFT);
 
                     $kd_pelanggan = $SheetDataKey['kd_pelanggan'];
                     $nama_pelanggan = $SheetDataKey['nama_pelanggan'];
@@ -194,10 +194,10 @@ class Admin extends CI_Controller
                     $hp = filter_var(trim($allDataInSheet[$i][$hp]), FILTER_SANITIZE_STRING);
                     $alamat = filter_var(trim($allDataInSheet[$i][$alamat]), FILTER_SANITIZE_STRING);
 
-                    //membalik/mengubah format tanggal menjadi 0000-00-00 jika format tanggalnya 00/00/0000
+                    //membalik/mengubah format tanggal menjadi yyyy-mm-dd jika format tanggalnya dd/mm/yyyy (format Indonesia)
                     $text = explode("/", $tgl_lahir);
                     if (strlen($text[2]) == 4) {
-                        $tgl_lahir = $text[2] . "-" . $text[0] . "-" . $text[1];
+                        $tgl_lahir = $text[2] . "-" . $text[1] . "-" . $text[0];
                     }
 
                     $fetchData[] = array('kd_pelanggan' => $kd_pelanggan, 'nama_pelanggan' => $nama_pelanggan, 'jk' => $jk, 'tgl_lahir' => $tgl_lahir, 'agama' => $agama, 'hp' => $hp, 'alamat' => $alamat);
@@ -244,18 +244,18 @@ class Admin extends CI_Controller
             $this->load->view('templates/topbar', $data);
 
             $dariDB = $this->admin->cekkodebarang();
-            // contoh B0001, angka 1 adalah awal pengambilan angka, dan 4 jumlah angka yang diambil
-            $nourut = substr($dariDB, 1, 4);
-            $kodeBarangSekarang = (int)$nourut + 1;
-            $data['kd_barang'] = 'B' . str_pad($kodeBarangSekarang, 4, '0', STR_PAD_LEFT);
+            // contoh B-0001, angka 2 adalah awal pengambilan angka setelah B-, dan 4 jumlah angka yang diambil
+            $nourut = (int)str_replace('B-', '', $dariDB);
+            $kodeBarangSekarang = $nourut + 1;
+            $data['kd_barang'] = 'B-' . str_pad($kodeBarangSekarang, 4, '0', STR_PAD_LEFT);
 
             $this->load->view('admin/masterbarang', $data);
             $this->load->view('templates/footer');
         } else {
             $kodeBarang = $this->input->post('kd_barang');
-            // Pastikan format B0001 saat insert
+            // Pastikan format B-0001 saat insert
             if (is_numeric($kodeBarang)) {
-                $kodeBarang = 'B' . str_pad($kodeBarang, 4, '0', STR_PAD_LEFT);
+                $kodeBarang = 'B-' . str_pad($kodeBarang, 4, '0', STR_PAD_LEFT);
             }
             $data = [
                 'kd_barang' => $kodeBarang,
@@ -313,12 +313,12 @@ class Admin extends CI_Controller
             if ($flag == 1) {
 
                 $dariDB = $this->admin->cekkodebarang();
-                $no_awal = substr($dariDB, 1, 4);
-                $nourut = (int)$no_awal + 1;
+                $no_awal = (int)str_replace('B-', '', $dariDB);
+                $nourut = $no_awal + 1;
 
                 for ($i = 2; $i <= $arrayCount; $i++) {
 
-                    $kodeBarangSekarang = 'B' . str_pad($nourut++, 4, '0', STR_PAD_LEFT);
+                    $kodeBarangSekarang = 'B-' . str_pad($nourut++, 4, '0', STR_PAD_LEFT);
 
                     $kd_barang = $SheetDataKey['kd_barang'];
                     $nama_barang = $SheetDataKey['nama_barang'];
@@ -377,18 +377,18 @@ class Admin extends CI_Controller
             $this->load->view('templates/topbar', $data);
 
             $dariDB = $this->admin->cekkodepenjualan();
-            // contoh T001, angka 1 adalah awal pengambilan angka, dan 3 jumlah angka yang diambil
-            $nourut = substr($dariDB, 1, 3);
-            $kodePenjualanSekarang = (int)$nourut + 1;
-            $data['kd_penjualan'] = 'T' . str_pad($kodePenjualanSekarang, 3, '0', STR_PAD_LEFT);
+            // contoh T-0001, angka 2 adalah awal pengambilan angka setelah T-, dan 4 jumlah angka yang diambil
+            $nourut = (int)str_replace('T-', '', $dariDB);
+            $kodePenjualanSekarang = $nourut + 1;
+            $data['kd_penjualan'] = 'T-' . str_pad($kodePenjualanSekarang, 4, '0', STR_PAD_LEFT);
 
             $this->load->view('admin/transaksipenjualan', $data);
             $this->load->view('templates/footer');
         } else {
             $kodePenjualan = $this->input->post('kd_penjualan');
-            // Pastikan format T001 saat insert
+            // Pastikan format T-0001 saat insert
             if (is_numeric($kodePenjualan)) {
-                $kodePenjualan = 'T' . str_pad($kodePenjualan, 3, '0', STR_PAD_LEFT);
+                $kodePenjualan = 'T-' . str_pad($kodePenjualan, 4, '0', STR_PAD_LEFT);
             }
             $data = [
                 'kd_penjualan' => $kodePenjualan,

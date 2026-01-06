@@ -46,7 +46,7 @@ CREATE TABLE `barang` (
 -- Dumping data untuk tabel `barang`
 --
 
--- Data barang kosong, akan otomatis generate dari B0001, B0002, dst saat ditambahkan
+-- Data barang kosong, akan otomatis generate dari B-0001, B-0002, dst saat ditambahkan
 
 -- --------------------------------------------------------
 
@@ -68,7 +68,7 @@ CREATE TABLE `pelanggan` (
 -- Dumping data untuk tabel `pelanggan`
 --
 
--- Data pelanggan kosong, akan otomatis generate dari P001, P002, dst saat ditambahkan
+-- Data pelanggan kosong, akan otomatis generate dari P-0001, P-0002, dst saat ditambahkan
 
 -- --------------------------------------------------------
 
@@ -88,7 +88,7 @@ CREATE TABLE `penjualan` (
 -- Dumping data untuk tabel `penjualan`
 --
 
--- Data penjualan kosong, akan otomatis generate dari T001, T002, dst saat ditambahkan
+-- Data penjualan kosong, akan otomatis generate dari T-0001, T-0002, dst saat ditambahkan
 
 -- --------------------------------------------------------
 

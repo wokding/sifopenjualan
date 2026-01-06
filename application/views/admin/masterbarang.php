@@ -74,7 +74,7 @@
                                     <div class="form-group">
                                         <label class="col-form-label col-lg label-align">Kode Barang : </label>
                                         <div class="col-lg">
-                                            <input type="text" readonly class="form-control" id="kd_barang" name="kd_barang" value="B<?php echo sprintf("%04s", $kd_barang) ?>" placeholder="Kode Barang" required>
+                                            <input type="text" readonly class="form-control" id="kd_barang" name="kd_barang" value="<?php echo $kd_barang ?>" placeholder="Kode Barang" required>
                                         </div>
                                     </div>
                                     <div class="form-group">

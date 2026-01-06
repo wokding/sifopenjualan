@@ -36,10 +36,10 @@ class Transaksi extends CI_Controller
             $this->load->view('templates/topbar', $data);
 
             $dariDB = $this->admin->cekkodepenjualan();
-            // contoh T001, angka 1 adalah awal pengambilan angka, dan 3 jumlah angka yang diambil
-            $nourut = substr($dariDB, 1, 3);
-            $kodePenjualanSekarang = (int)$nourut + 1;
-            $data['kd_penjualan'] = 'T' . str_pad($kodePenjualanSekarang, 3, '0', STR_PAD_LEFT);
+            // contoh T-0001, angka 2 adalah awal pengambilan angka setelah T-, dan 4 jumlah angka yang diambil
+            $nourut = (int)str_replace('T-', '', $dariDB);
+            $kodePenjualanSekarang = $nourut + 1;
+            $data['kd_penjualan'] = 'T-' . str_pad($kodePenjualanSekarang, 4, '0', STR_PAD_LEFT);
             $data['transaksiPenjualan'] = $this->admin->getPenjualan();
             $data['masterPelanggan'] = $this->db->get('pelanggan')->result_array();
             $data['masterBarang'] = $this->db->get('barang')->result_array();
@@ -48,9 +48,9 @@ class Transaksi extends CI_Controller
             $this->load->view('templates/footer');
         } else {
             $kodePenjualan = $this->input->post('kd_penjualan');
-            // Pastikan format T001 saat insert
+            // Pastikan format T-0001 saat insert
             if (is_numeric($kodePenjualan)) {
-                $kodePenjualan = 'T' . str_pad($kodePenjualan, 3, '0', STR_PAD_LEFT);
+                $kodePenjualan = 'T-' . str_pad($kodePenjualan, 4, '0', STR_PAD_LEFT);
             }
             $data = [
                 'kd_penjualan' => $kodePenjualan,
