@@ -23,9 +23,10 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="<?= current_url(); ?>">
     
-    <link rel="icon" type="image/x-icon" href="<?= base_url('assets/'); ?>img/favicon.ico" sizes="16x16">
-    <link rel="icon" type="image/x-icon" href="<?= base_url('assets/'); ?>img/favicon.ico" sizes="32x32">
-    <link rel="shortcut icon" type="image/x-icon" href="<?= base_url('assets/'); ?>img/favicon.ico">
+    <!-- Favicon - Optimized for Google Search Console -->
+    <link rel="icon" href="<?= base_url('assets/img/favicon.ico'); ?>" type="image/x-icon">
+    <link rel="shortcut icon" href="<?= base_url('assets/img/favicon.ico'); ?>" type="image/x-icon">
+    <link rel="apple-touch-icon" href="<?= base_url('assets/img/favicon.ico'); ?>">
 
     <title>
         <?= $title; ?>
