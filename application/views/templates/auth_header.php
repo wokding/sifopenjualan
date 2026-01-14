@@ -6,8 +6,22 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Login ke Sistem Informasi Penjualan - Kelola bisnis penjualan Anda dengan mudah dan efisien. Sistem manajemen stok dan transaksi terintegrasi.">
+    <meta name="keywords" content="login sistem penjualan, login kasir, sistem informasi penjualan, aplikasi kasir online">
+    <meta name="author" content="SIPenjual">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Google Site Verification -->
+    <meta name="google-site-verification" content="JO5ybsotEBc3mwQuKhUxWpr7WFkZ2z5Ypjna1d7BCHM" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="<?= base_url(); ?>">
+    <meta property="og:title" content="<?= $title; ?> - Sistem Informasi Penjualan">
+    <meta property="og:description" content="Login ke Sistem Informasi Penjualan - Kelola bisnis penjualan Anda dengan mudah dan efisien">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="<?= current_url(); ?>">
     
     <link rel="icon" type="image/x-icon" href="<?= base_url('assets/'); ?>img/favicon.ico" sizes="16x16">
     <link rel="icon" type="image/x-icon" href="<?= base_url('assets/'); ?>img/favicon.ico" sizes="32x32">

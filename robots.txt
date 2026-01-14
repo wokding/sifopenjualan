@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /application/
+Disallow: /system/
+Disallow: /user_guide/
+Disallow: /vendor/
+Disallow: /database/
+
+# Sitemap location
+Sitemap: https://sipenjual.free.nf/sitemap.xml
+Sitemap: https://sipenjual.free.nf/sitemap

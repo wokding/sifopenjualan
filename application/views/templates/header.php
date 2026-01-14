@@ -6,8 +6,31 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Sistem Informasi Penjualan - Aplikasi manajemen penjualan dan stok barang yang mudah digunakan. Kelola transaksi, laporan, dan inventori bisnis Anda dengan efisien.">
+    <meta name="keywords" content="sistem penjualan, aplikasi kasir, manajemen stok, inventori, laporan penjualan, point of sale, POS, sistem informasi">
+    <meta name="author" content="SIPenjual">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    
+    <!-- Google Site Verification -->
+    <meta name="google-site-verification" content="JO5ybsotEBc3mwQuKhUxWpr7WFkZ2z5Ypjna1d7BCHM" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="<?= base_url(); ?>">
+    <meta property="og:title" content="<?= $title; ?> - Sistem Informasi Penjualan">
+    <meta property="og:description" content="Sistem Informasi Penjualan - Aplikasi manajemen penjualan dan stok barang yang mudah digunakan">
+    <meta property="og:image" content="<?= base_url('assets/img/favicon.ico'); ?>">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="<?= base_url(); ?>">
+    <meta property="twitter:title" content="<?= $title; ?> - Sistem Informasi Penjualan">
+    <meta property="twitter:description" content="Sistem Informasi Penjualan - Aplikasi manajemen penjualan dan stok barang yang mudah digunakan">
+    <meta property="twitter:image" content="<?= base_url('assets/img/favicon.ico'); ?>">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="<?= current_url(); ?>">
     
     <link rel="icon" type="image/x-icon" href="<?= base_url('assets/'); ?>img/favicon.ico" sizes="16x16">
     <link rel="icon" type="image/x-icon" href="<?= base_url('assets/'); ?>img/favicon.ico" sizes="32x32">
