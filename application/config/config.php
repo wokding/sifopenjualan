@@ -23,7 +23,18 @@ defined('BASEPATH') or exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost:8000/';
+
+// Auto-detect base_url (fleksibel untuk localhost dan hosting)
+if (isset($_SERVER['HTTP_HOST'])) {
+    $base_url = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') || 
+                 (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')) 
+                 ? 'https://' : 'http://';
+    $base_url .= $_SERVER['HTTP_HOST'];
+    $base_url .= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
+    $config['base_url'] = $base_url;
+} else {
+    $config['base_url'] = 'http://localhost/';
+}
 
 /*
 |--------------------------------------------------------------------------
@@ -377,10 +388,10 @@ $config['encryption_key'] = '';
 | except for 'cookie_prefix' and 'cookie_httponly', which are ignored here.
 |
 */
-$config['sess_driver'] = 'files';
+$config['sess_driver'] = 'database';
 $config['sess_cookie_name'] = 'ci_session';
 $config['sess_expiration'] = 7200;
-$config['sess_save_path'] = APPPATH . 'cache/';
+$config['sess_save_path'] = 'ci_sessions';
 $config['sess_match_ip'] = FALSE;
 $config['sess_time_to_update'] = 300;
 $config['sess_regenerate_destroy'] = FALSE;
