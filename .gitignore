@@ -16,6 +16,10 @@ user_guide_src/cilexer/dist/*
 user_guide_src/cilexer/pycilexer.egg-info/*
 /vendor/
 
+# Database files
+#-------------------------
+database/fix_session_error.sql
+
 # IDE Files
 #-------------------------
 /nbproject/
